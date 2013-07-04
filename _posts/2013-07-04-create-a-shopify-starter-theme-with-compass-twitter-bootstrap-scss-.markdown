@@ -30,11 +30,11 @@ Shopify supports using SCSS in the liquid templates. But there are limitations.
     - templates
 
 ### Compass project
-~~~ bash
+{% highlight bash %}
 gem install bootstrap-sass
 cd shopify-skeleton-theme-compass-scss-bootstrap
 compass create compass-assets -r bootstrap-sass --using bootstrap
-~~~
+{% endhighlight %}
 
 ### Original skeleton theme
 Copy files from the [Shopify skeleton theme](https://github.com/Shopify/skeleton-theme), or add it as a git submodule.
@@ -42,26 +42,25 @@ Copy files from the [Shopify skeleton theme](https://github.com/Shopify/skeleton
 ## Integrating Compass project with the skeleton theme
 Edit `compass-assets/config.rb`
 
-~~~ ruby
+{% highlight ruby %}
 css_dir = "../skeleton-theme/assets/"
 images_dir = "../skeleton-theme/assets/"
-~~~
-
+{% endhighlight %}
 
 ### Move files from compass folder to skeleton theme
 
-~~~ bash
+{% highlight bash %}
 mv compass-assets/images/* skeleton-theme/assets/
-~~~
+{% endhighlight %}
 
 ### Clean up
 
 You can remove these folder safely.
 
-~~~ bash
+{% highlight bash %}
 rm -rf compass-assets/images
 rm -rf compass-assets/stylesheets
-~~~
+{% endhighlight %}
 
 ### Appending .liquid extension to the css file
 
@@ -69,33 +68,33 @@ The default filename is style.css. If you will use liquid variables, the filenam
 
 Append `compass-assets/config.rb`
 
-~~~ ruby
+{% highlight ruby %}
 on_stylesheet_saved do |filename|
   move_to = filename + ".liquid"
   puts "Moving from #{filename} to #{move_to}"
   FileUtils.mv(filename, move_to)
 end
-~~~
+{% endhighlight %}
 
 ### Generate the CSS file
 
-~~~ bash
+{% highlight bash %}
 cd compass-assets
 compass compile --force
-~~~
+{% endhighlight %}
 
 You should see the following outputs
 
-~~~ bash
+{% highlight bash %}
 create ../skeleton-theme/assets/styles.css
 Moving from {path}/styles.css to {path}/styles.css.liquid
-~~~
+{% endhighlight %}
 
 ### Rename theme file in the skeleton theme
 
-~~~ bash
+{% highlight bash %}
 rm ./skeleton-theme/assets/style.css.liquid
-~~~
+{% endhighlight %}
 
 Edit `./skeleton-theme/layout/theme.liquid`
 
