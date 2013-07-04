@@ -2,7 +2,7 @@ title: l4u
 tagline:
 description:
 #Comment out url when working locally to resolve base urls correctly
-#url:              http://l4u.github.io
+url:              http://l4u.github.io
 
 # Owner/author information
 owner:
