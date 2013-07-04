@@ -1,11 +1,16 @@
+# Compile less
+
+Use less 1.3
+lessc --compress assets/less/main.less > assets/css/main.css
+
 # Minimal Mistakes
 
-Jekyll is pretty rad and figured releasing a cleaned up version of [my setup](http://mademistakes.com) as a theme to hack up and use would be cool. So here be that theme --- I call it **[Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)**, a responsive Jekyll theme with editorial tendencies. 
+Jekyll is pretty rad and figured releasing a cleaned up version of [my setup](http://mademistakes.com) as a theme to hack up and use would be cool. So here be that theme --- I call it **[Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)**, a responsive Jekyll theme with editorial tendencies.
 
 ## Minimal Mistakes is all about:
 
 * Responsive templates. Looking good on mobile, tablet, and desktop.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 8+ and all modern browsers. 
+* Gracefully degrading in older browsers. Compatible with Internet Explorer 8+ and all modern browsers.
 * Minimal embellishments. Content first --- other widget nonsense never.
 * Large feature images for posts and pages.
 * Simple and clear permalink structure *(ie: domain.com/category/post-title)*
@@ -43,7 +48,7 @@ minimal-mistakes/
 |    ├── js
 |    |   ├── main.js  //jQuery plugins and settings
 |    |   └── vendor  //all 3rd party scripts
-|    └── less 
+|    └── less
 ├── images  //images for posts and pages
 ├── about.md  //about page
 ├── articles.md  //lists all posts from latest to oldest
@@ -94,13 +99,13 @@ For the most part you can leave these as is since the author/owner details are p
 
 ### Adding Posts and Pages
 
-There are two main content layouts: `post.html` (for posts) and `page.html` (for pages). Both have large **feature images** that span the full-width of the screen, and both are meant for text heavy blog posts (or articles). 
+There are two main content layouts: `post.html` (for posts) and `page.html` (for pages). Both have large **feature images** that span the full-width of the screen, and both are meant for text heavy blog posts (or articles).
 
 #### Feature Images
 
 A good rule of thumb is to keep feature images nice and wide so you don't push the body text too far down. An image cropped around around 1024 x 256 pixels will keep file size down with an acceptable resolution for most devices. If you want to serve these images responsively I'd suggest looking at [Picturefill](https://github.com/scottjehl/picturefill) or [Adaptive Images](http://adaptive-images.com/).
 
-The two layouts make the assumption that the feature images live in the *images* folder. To add a feature image to a post or page just include the filename in the front matter like so. 
+The two layouts make the assumption that the feature images live in the *images* folder. To add a feature image to a post or page just include the filename in the front matter like so.
 
 ``` yaml
 image:
@@ -167,8 +172,8 @@ To make things easier I use LESS to build Minimal Mistakes' stylesheets. If you 
 // COLOR ====================================================
 @bodycolor      : #ebebeb;
 @textcolor      : #333332;
-@basecolor      : #343434;    
-@compcolor      : spin(@basecolor, 180); 
+@basecolor      : #343434;
+@compcolor      : spin(@basecolor, 180);
 @bordercolor    : @basecolor;
 @white          : #fff;
 @black          : #000;
